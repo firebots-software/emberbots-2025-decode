@@ -5,6 +5,7 @@
 <variable id="A0{M/u;_D9qt7$OJU{:5">strafe</variable>
 <variable id="EM)SCWB5tZN`Uc5!0NzB">turn</variable>
 <variable id="}|mpf/Ea:W#eh[2]%-0|">manualScale</variable>
+<variable id=";;U]yvycFagk]Pglge.k">inputistance</variable>
 <variable id="44W`I6+P*5dIfue10TP#">yaw</variable>
 <variable id="B#^Iq$-H)??CK(}xCNYt">clipScale</variable>
 <variable id="00HXTEl[jSxMVzvzT2]M">BwasPressed</variable>
@@ -16,6 +17,8 @@
 <variable id="P}J{*mrn`?;%jCB2fjM1">roll</variable>
 <variable id="d%HDHN0gU6{$4g%},uYo">frontLeftMotorTemp</variable>
 <variable id="f4nJi.WihA1SlXS*B-q5">distance</variable>
+<variable id="WFnljuVAolvE7Jb}`pI{">DpadUpWasPressed</variable>
+<variable id="YKC/h05SA~oNBki{k21:">DpadDownWasPressed</variable>
 <variable id="lJ-L8P%Yr_F^al0-~;S|">backLeftMotorTemp</variable>
 <variable id="9rJ`/]R5wCmX2h,I*tS*">backRightMotorTemp</variable>
 <variable id="|^kcT5o_5IGmPBxTF^xP">myIMUparameters</variable>
@@ -75,6 +78,26 @@
 <value name="VALUE">
 <shadow type="crServo_typedEnum_direction" id="Z^H7W9pzh-}seRHt%#1M">
 <field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="yma6FBRRQzw#??WMtdtd">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="2G0H@?vTMGbc-)2u#:fS">
+<field name="ZERO_POWER_BEHAVIOR">FLOAT</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="^O-[w_7r%{_,3*L8?ghh">
+<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"backRightMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="w_Xz4$bdDunE/MV.~WCN">
+<field name="ZERO_POWER_BEHAVIOR">FLOAT</field>
 </shadow>
 </value>
 <next>
@@ -243,6 +266,44 @@
 </block>
 </statement>
 <next>
+<block type="controls_if" id="/AXMP%zq/BC=eq[ZyTDg">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="mCc]9!pRxCs~xpsPq}{p">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="I_Qgq-:{T0E.thdkm22r">
+<field name="VAR" id="WFnljuVAolvE7Jb}`pI{">DpadUpWasPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="N4F[06PzzI)=2=A_rHpE">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="1tw/nQF},Z2Sd(TpbxZ(">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="st[SQarO17*N:R48/9fe">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="_M.XObZlYy?7IlzTYJV~">
+<field name="VAR" id="YKC/h05SA~oNBki{k21:">DpadDownWasPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id=":Sb-_U?TF}9na,xxSFxJ">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
 <block type="controls_if" id="(y@|YM*|Z=3{ic0.m`b5">
 <value name="IF0">
 <block type="variables_get" id="Xc+B~/Z3nr.v|+XTKrw,">
@@ -276,6 +337,44 @@
 <value name="ARG0">
 <block type="math_number" id="yzh:iD+6.Dg486]4E=7X">
 <field name="NUM">90</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="/K~L{z`p2KL!crxirKdb">
+<value name="IF0">
+<block type="variables_get" id="Fs011pweH%a9No~O~+fe">
+<field name="VAR" id="WFnljuVAolvE7Jb}`pI{">DpadUpWasPressed</field>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="2d$?X^cx7r8[4:B#RODe">
+<mutation name="forward">
+<arg name="inputistance"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="U^KV#-a}_@8Q3fH3`$d5">
+<field name="NUM">48</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="J)6Qvz@+}n!VYy,zS{G~">
+<value name="IF0">
+<block type="variables_get" id="/Ac[Dx~WA!D*f~bsG9!^">
+<field name="VAR" id="YKC/h05SA~oNBki{k21:">DpadDownWasPressed</field>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="GkI@(AEmb?$[hMGc45DZ">
+<mutation name="backward">
+<arg name="inputistance"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="FlbU1pp1?}HLYkY#cAZ[">
+<field name="NUM">48</field>
 </block>
 </value>
 </block>
@@ -375,11 +474,23 @@
 </block>
 </next>
 </block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
 </statement>
 </block>
 </next>
 </block>
 </statement>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -570,6 +681,95 @@
 </block>
 </statement>
 </block>
+<block type="procedures_defnoreturn" id="mmgIj}T@PcJ=za2R]1F~" x="1236" y="444">
+<mutation>
+<arg name="inputistance" varid=";;U]yvycFagk]Pglge.k"/>
+</mutation>
+<field name="NAME">forward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="?%bmyj8Y|P-:k4)(`zlM">
+<mutation else="1"/>
+<value name="IF0">
+<block type="logic_compare" id="Pw`X7rl:phEr+PnV#;i.">
+<field name="OP">LTE</field>
+<value name="A">
+<block type="variables_get" id="`bK0DPLy8}REKS!Y$u|4">
+<field name="VAR" id="f4nJi.WihA1SlXS*B-q5">distance</field>
+</block>
+</value>
+<value name="B">
+<block type="variables_get" id="{~9$)Bt$d@uHZ8NzoH/.">
+<field name="VAR" id=";;U]yvycFagk]Pglge.k">inputistance</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="hK`N9/MVR5@NkjA4$:2f">
+<field name="VAR" id="/KpLC{CAH_H5NSL,^G9c">forward</field>
+<value name="VALUE">
+<block type="math_number" id="=T{fKuxr+XfP-o^u)}E6">
+<field name="NUM">0.5</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="=(~QuF5~4NmOD)Ky98eB">
+<field name="VAR" id="A0{M/u;_D9qt7$OJU{:5">strafe</field>
+<value name="VALUE">
+<block type="math_number" id="(*eEXNZpYv;GnE:1/!}z">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="h^UQE7+*%jJ{,biZg#Ez">
+<field name="VAR" id="EM)SCWB5tZN`Uc5!0NzB">turn</field>
+<value name="VALUE">
+<block type="math_number" id="(Vh6/QwfF$v=hi{9PjSS">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="variables_set" id="P4wh]J)80K_Weo;Lxs=f">
+<field name="VAR" id="/KpLC{CAH_H5NSL,^G9c">forward</field>
+<value name="VALUE">
+<block type="math_number" id="Y^K-C4[`am-fUb$EAR3:">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="T*?W3o55~+veX{ZEC@zx">
+<field name="VAR" id="WFnljuVAolvE7Jb}`pI{">DpadUpWasPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="aHwJ5E[G`2Xkum2Pk%4i">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="LP!kn1O+A,|s[qp|f3Hn">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="y5eGM`g!#!S3O#T|uxL^">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
 <block type="procedures_defnoreturn" id="4fjU/LGdcZ|xji]jNEh." x="831" y="498">
 <mutation>
 <arg name="degrees" varid="Ka`+`kw@Mk738xaF.}#j"/>
@@ -644,6 +844,115 @@
 <block type="imu_resetYaw" id="?@0*Km[*V`;e1)BFn)XJ">
 <field name="IDENTIFIER">imuAsIMU</field>
 <data>{"IDENTIFIER":"imu"}</data>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="C{D9~-KIl~#v}/:beTD:">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="c+p*hu8ADYOx6e[GmIo)">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="$.aqE.J~r3Rb%U.bOY0K" x="1314" y="779">
+<mutation>
+<arg name="inputistance" varid=";;U]yvycFagk]Pglge.k"/>
+</mutation>
+<field name="NAME">backward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="4}D4sdRQocN+@(DI`BH:">
+<mutation else="1"/>
+<value name="IF0">
+<block type="logic_compare" id="]U}}OH[(1l8+(F/BfaV0">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="`KOr%H/^Oo$t?iwuye`%">
+<field name="VAR" id="f4nJi.WihA1SlXS*B-q5">distance</field>
+</block>
+</value>
+<value name="B">
+<block type="math_single" id="t=|w*9#L]oNn@_K^(aLW">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="wwwS:}]h1,wa|qWC$Y[f">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="(9gauP8raxwN@_%K4@@q">
+<field name="VAR" id=";;U]yvycFagk]Pglge.k">inputistance</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="d:tu#aL2Rg^~v2y}19:7">
+<field name="VAR" id="/KpLC{CAH_H5NSL,^G9c">forward</field>
+<value name="VALUE">
+<block type="math_number" id="td1*HqL}k64OSaOB6;)%">
+<field name="NUM">-0.5</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="cpaD{LLxvsuQEMY#ML]9">
+<field name="VAR" id="A0{M/u;_D9qt7$OJU{:5">strafe</field>
+<value name="VALUE">
+<block type="math_number" id="5o9I8E~/jA?@73@^rR,o">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="?g~8U%b`;hccNfF8k~MT">
+<field name="VAR" id="EM)SCWB5tZN`Uc5!0NzB">turn</field>
+<value name="VALUE">
+<block type="math_number" id="[SJb}R:H)QfyZ9V1-|L$">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="variables_set" id="IHZ=:$=hBmpl|=U!yZ@p">
+<field name="VAR" id="/KpLC{CAH_H5NSL,^G9c">forward</field>
+<value name="VALUE">
+<block type="math_number" id="-+K8r[mDBD]i}kx|j$u5">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="sbe2=x2aTfnag_Zs6u`5">
+<field name="VAR" id="YKC/h05SA~oNBki{k21:">DpadDownWasPressed</field>
+<value name="VALUE">
+<block type="logic_boolean" id="d^{d/;-U;`Dy=7~#e+bj">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="bf2g-.1bToAH?pRV8j-1">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="R.T_j65tMC.d)2RteV38">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
 </block>
 </next>
 </block>
@@ -735,6 +1044,18 @@
 <block type="imu_resetYaw" id="WEeeb1ON`B%8%Fd^*/fR">
 <field name="IDENTIFIER">imuAsIMU</field>
 <data>{"IDENTIFIER":"imu"}</data>
+<next>
+<block type="dcMotor_setProperty_RunMode" id=",FzrFDs,/=.0Xry_Kd44">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="^%q`EF*-Rdx%9^EuojjN">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -744,7 +1065,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="c=38,|F*nr$ov^MUFEwq" x="-514" y="1144">
+<block type="procedures_defnoreturn" id="c=38,|F*nr$ov^MUFEwq" x="-601" y="1196">
 <field name="NAME">getRotation</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -876,7 +1197,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="192" y="1161">
+<block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="146" y="1277">
 <mutation>
 <arg name="forward" varid="/KpLC{CAH_H5NSL,^G9c"/>
 <arg name="strafe" varid="A0{M/u;_D9qt7$OJU{:5"/>
