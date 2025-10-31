@@ -101,7 +101,7 @@
 <field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
 <value name="VALUE">
 <block type="math_number" id="g8m}wG8NCT*m:2am$if0">
-<field name="NUM">0</field>
+<field name="NUM">1200</field>
 </block>
 </value>
 </block>
@@ -500,6 +500,44 @@
 </block>
 </statement>
 <next>
+<block type="controls_if" id="tK=P3p0nYbx^6-zbgVYY">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="-/J5XU=_],Eo-;P0W%SJ">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadRight</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="z9@xM.Zw1-]Y,pHPoSXs">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="B}^M7EVGxaKbr_x-+I68">
+<field name="NUM">1240</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="m)/=0#mOC|s))}9yFVO2">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="Zspaa~np?ZcXX++Ja_?~">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadLeft</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="Y^6q*f!t`([lc=.$[OAE">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="T(u~P6g*{wv~ML%9tn=e">
+<field name="NUM">1360</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
 <block type="controls_if" id="G8sbA0!NhZ..%EFz$MRR">
 <value name="IF0">
 <block type="gamepad_getProperty_Boolean" id=";rdH.*-)-A}Feyfft9Wz">
@@ -670,7 +708,7 @@
 <field name="VAR" id="bJUB|L9Ad:!GI:huC!aX">speedScale</field>
 <value name="VALUE">
 <block type="math_number" id="]~;IBjtYIT`O.%oS,uxy">
-<field name="NUM">0.1</field>
+<field name="NUM">0.15</field>
 </block>
 </value>
 </block>
@@ -785,6 +823,10 @@
 <mutation name="displayTelemetry"/>
 <next>
 <block type="telemetry_update" id="fQ`*_3x#Q]1g[q^dF(.{"/>
+</next>
+</block>
+</next>
+</block>
 </next>
 </block>
 </next>
