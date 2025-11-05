@@ -13,6 +13,7 @@
 <variable id="3u,hop3.^mZngLiO58K#">stateComplete</variable>
 <variable id="L9dcHD*/9A@7CKtSPH#c">timerForShooting</variable>
 <variable id="44W`I6+P*5dIfue10TP#">yaw</variable>
+<variable id="f4nJi.WihA1SlXS*B-q5">distance</variable>
 <variable id="0]K(1HI(/b.sSW{pM85P">frontRightMotorTemp</variable>
 <variable id="$irOUv%=Bfh6:,[]G|]{">servoState</variable>
 <variable id="-K~JAh7A@AsGfdIjXe`1">sleepTime2</variable>
@@ -20,9 +21,8 @@
 <variable id="QdW~OUlS}sE4[4Fy:j~H">rightState</variable>
 <variable id="bJUB|L9Ad:!GI:huC!aX">manualScaling</variable>
 <variable id=",8!EfA$6PKZG5-K_V$E?">stateCounter</variable>
-<variable id="f4nJi.WihA1SlXS*B-q5">distance</variable>
-<variable id="W+|ccqmC6jdcgD.id#0?">pprtoinches</variable>
 <variable id="d%HDHN0gU6{$4g%},uYo">frontLeftMotorTemp</variable>
+<variable id="z4?cT2SxsRK!r^84D?z$">servoUp</variable>
 <variable id="Hf?rXSuN8r_r;,}e:y2t">shootingCounter</variable>
 <variable id="8@ox/x{o[6`+X_mj=HSI">strafeLeftState</variable>
 <variable id="HvFvhJ7j(iTi?=I~yq0H">forwardState</variable>
@@ -31,6 +31,7 @@
 <variable id="^Td+R6vN(vRY}[c9}KGl">shootingPower</variable>
 <variable id="3DV0p(iiWzK)qB_){p?l">shooterRPM</variable>
 <variable id="Ar?EaWx|({t_6S=V$N.h">nextDistance</variable>
+<variable id="W+|ccqmC6jdcgD.id#0?">pprtoinches</variable>
 <variable id="9rJ`/]R5wCmX2h,I*tS*">backRightMotorTemp</variable>
 <variable id="pk.;B})?P4`H8w=ATY/a">backwardState</variable>
 <variable id="ZN#@1,.PHSNW^FQ3=C?2">shootingState</variable>
@@ -727,134 +728,44 @@
 <field name="BOOL">TRUE</field>
 </block>
 </value>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
-</block>
-<block type="procedures_defnoreturn" id="^pD/Jj;-JR@/:qNAEX@1" disabled="true" x="1175" y="-450">
-<field name="NAME">initDrivebase(1)</field>
-<comment pinned="false" h="80" w="160">Describe this function...</comment>
-<statement name="STACK">
-<block type="dcMotor_setProperty_Direction" id="|/kFU0z!sz|QFIE!2Aa{">
-<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"backLeftMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_direction" id="mkQ}Wnw|^.6kaiYu#:~~">
-<field name="DIRECTION">REVERSE</field>
-</shadow>
-</value>
 <next>
-<block type="dcMotor_setProperty_Direction" id="j@|$QsK7UwaTw?=$h.0=">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"frontLeftMotor"}</data>
+<block type="variables_set" id="A]~=t-m%s%U,P!blumZQ">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
 <value name="VALUE">
-<shadow type="dcMotor_typedEnum_direction" id="yQX54]rRes3+ZEgh7E5^">
-<field name="DIRECTION">REVERSE</field>
-</shadow>
+<block type="math_number" id="wSu:dd/%jGG(%@[;7B}Z">
+<field name="NUM">0</field>
+</block>
 </value>
-<next>
-<block type="crServo_setProperty_Direction" id="6klJ$a2+:aIHZ4!|[(vN">
-<field name="IDENTIFIER">frontRightMotorAsCRServo</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"frontRightMotor"}</data>
-<value name="VALUE">
-<shadow type="crServo_typedEnum_direction" id="4(STU}I9ug7bwIu|xhXe">
-<field name="DIRECTION">REVERSE</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_RunMode" id="EI$SxsaI-5R$G]PGdo5.">
-<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
-<field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"backRightMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_runMode" id="vWMnn*#P3`7nRz:R}~`Y">
-<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_RunMode" id="dg.s1Tr^Z6k/$kA/g=Ze">
-<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
-<field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"backRightMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_runMode" id="sM^:XsoD%-}5y.JdO^EU">
-<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_ZeroPowerBehavior" id="yma6FBRRQzw#??WMtdtd">
-<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
-<field name="PROP">ZeroPowerBehavior</field>
-<data>{"IDENTIFIER":"backLeftMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="2G0H@?vTMGbc-)2u#:fS">
-<field name="ZERO_POWER_BEHAVIOR">FLOAT</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_ZeroPowerBehavior" id=",|MNZBS0A9+`}=XOKm%G">
-<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
-<field name="PROP">ZeroPowerBehavior</field>
-<data>{"IDENTIFIER":"backRightMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="#S{V9=H#BS@^r|J}/POd">
-<field name="ZERO_POWER_BEHAVIOR">FLOAT</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_ZeroPowerBehavior" id="GW9C7e-uFIbQ(~3UXO7T">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
-<field name="PROP">ZeroPowerBehavior</field>
-<data>{"IDENTIFIER":"frontLeftMotor"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="lp1}Q82GV)h+g?$!%)U4">
-<field name="ZERO_POWER_BEHAVIOR">FLOAT</field>
-</shadow>
-</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -1090,8 +1001,20 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_RunMode" id="H?K~/y,Zy2d^1P8#7~2N">
+<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backRightMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="HzTQuQj)b^6!ZdWWow6h">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
 <block type="procedures_callnoreturn" id="KBYTWf6RXwKd[mX-}.~=">
 <mutation name="stop"/>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -1198,8 +1121,20 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_RunMode" id="Idk7t7^3._C^22V}86e@">
+<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backRightMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="+jCJuJ0J:tXnEu%{lO`R">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
 <block type="procedures_callnoreturn" id="dFXZf]L:#edg(Wj0KSIl">
 <mutation name="stop"/>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -1483,8 +1418,20 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_RunMode" id="ff+K^8Yz5Y,^kIjynWpx">
+<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backRightMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="Eujs;|BygSie!t.sBl#Z">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
 <block type="procedures_callnoreturn" id="c(%n)bH@/5qt#D3LCJ;O">
 <mutation name="stop"/>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -1500,56 +1447,6 @@
 <field name="NAME">displayTelemetry</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
-<block type="telemetry_addNumericData_Number" id="wJ)*~nrFs(VI#KqquKjI" disabled="true">
-<value name="KEY">
-<shadow type="text" id="qc:Wx%|@N+m1Wh3UmDD5">
-<field name="TEXT">encoder to inches</field>
-</shadow>
-</value>
-<value name="NUMBER">
-<shadow type="math_number">
-<field name="NUM">123</field>
-</shadow>
-<block type="math_arithmetic" id="..u7$IgA?rG]no{.4NM;">
-<field name="OP">MULTIPLY</field>
-<value name="A">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="dcMotor_getProperty_Number" id="xAt%r:nhCHtbPXG1Qsk,">
-<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
-<field name="PROP">CurrentPosition</field>
-<data>{"IDENTIFIER":"backRightMotor"}</data>
-</block>
-</value>
-<value name="B">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="~OGu~gx5=4~^8m{WBwXr">
-<field name="VAR" id="W+|ccqmC6jdcgD.id#0?">pprtoinches</field>
-</block>
-</value>
-</block>
-</value>
-<next>
-<block type="telemetry_addNumericData_Number" id="#Y_buST.gz{m%D7f8o;Q" disabled="true">
-<value name="KEY">
-<shadow type="text" id="};wI?=bU;F9eg%H)vyJ+">
-<field name="TEXT">encoder</field>
-</shadow>
-</value>
-<value name="NUMBER">
-<shadow type="math_number" id="f}-G$pqI:7{28e5xfaK=">
-<field name="NUM">123</field>
-</shadow>
-<block type="dcMotor_getProperty_Number" id="tCs^23(+,;#HoQ+2LlbS">
-<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
-<field name="PROP">CurrentPosition</field>
-<data>{"IDENTIFIER":"backRightMotor"}</data>
-</block>
-</value>
-<next>
 <block type="telemetry_addNumericData_Number" id="U=k9OIANPgPsnS3~r[Sq">
 <value name="KEY">
 <shadow type="text" id="kI?m,:dBZ~Whd1R@?K#i">
@@ -1657,10 +1554,6 @@
 <next>
 <block type="procedures_callnoreturn" id="=5Ov[`Q|)f|P!MuEc*9`">
 <mutation name="getRotation"/>
-</block>
-</next>
-</block>
-</next>
 </block>
 </next>
 </block>
@@ -1784,8 +1677,20 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_RunMode" id="c9blzntDBCALW)W%Q,=q">
+<field name="IDENTIFIER">backRightMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backRightMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="R$bXMi}b}#zZ@B-4n4:^">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
 <block type="procedures_callnoreturn" id="7SkNu4.kohp|w*4N}r*k">
 <mutation name="stop"/>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -2317,6 +2222,14 @@
 </block>
 </value>
 <next>
+<block type="variables_set" id="$sAl)t2pWF61|Gr#?iA8">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
+<value name="VALUE">
+<block type="math_number" id="7$^TW(ExQArT!hx%j*50">
+<field name="NUM">0.2</field>
+</block>
+</value>
+<next>
 <block type="comment" id="8zzr6)AntG`Y|,MoY.xL">
 <field name="COMMENT">sets motor power</field>
 <next>
@@ -2343,8 +2256,8 @@
 <block type="variables_set" id="@0UPQ%;.eC%BaGd`]wlb">
 <field name="VAR" id="$irOUv%=Bfh6:,[]G|]{">servoState</field>
 <value name="VALUE">
-<block type="math_number" id="vL|H3HE5hX,u}^nVxuNe">
-<field name="NUM">0.2</field>
+<block type="variables_get" id="3Vn$!N@p0FtkPI7^*DQo">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
 </block>
 </value>
 <next>
@@ -2411,8 +2324,8 @@
 <block type="variables_set" id="7Os5we^RaT+]t^Mz_7gh">
 <field name="VAR" id="$irOUv%=Bfh6:,[]G|]{">servoState</field>
 <value name="VALUE">
-<block type="math_number" id="(R.Z^DYGvC-JVpth1!zE">
-<field name="NUM">0.2</field>
+<block type="variables_get" id="BGBNXZ|6MdNLOLrAY(Qb">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
 </block>
 </value>
 <next>
@@ -2479,8 +2392,8 @@
 <block type="variables_set" id="d?On7o-I0Hf-pq`A[W[?">
 <field name="VAR" id="$irOUv%=Bfh6:,[]G|]{">servoState</field>
 <value name="VALUE">
-<block type="math_number" id="l}?A}TVo!8(:bmZC-U`X">
-<field name="NUM">0.2</field>
+<block type="variables_get" id="3N1P$)pUeC#vNTisp1D#">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
 </block>
 </value>
 <next>
@@ -2547,8 +2460,8 @@
 <block type="variables_set" id="(^?7oN4}^Y.Cvf9RC)]P">
 <field name="VAR" id="$irOUv%=Bfh6:,[]G|]{">servoState</field>
 <value name="VALUE">
-<block type="math_number" id="u!cYoO7?6Q5Ss|3%8=L~">
-<field name="NUM">0.2</field>
+<block type="variables_get" id="6gqKRqv{NWt*8H;?SyfK">
+<field name="VAR" id="z4?cT2SxsRK!r^84D?z$">servoUp</field>
 </block>
 </value>
 <next>
@@ -2629,6 +2542,8 @@
 <field name="BOOL">TRUE</field>
 </block>
 </value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -3254,7 +3169,7 @@
 <field name="VAR" id="Ar?EaWx|({t_6S=V$N.h">nextDistance</field>
 <value name="VALUE">
 <block type="math_number" id="g1+#.fDuP9:jgIpn)4E#">
-<field name="NUM">12</field>
+<field name="NUM">4</field>
 </block>
 </value>
 </block>
