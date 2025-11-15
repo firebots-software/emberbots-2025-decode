@@ -27,11 +27,11 @@
 <variable id="8@ox/x{o[6`+X_mj=HSI">strafeLeftState</variable>
 <variable id="HvFvhJ7j(iTi?=I~yq0H">forwardState</variable>
 <variable id="lJ-L8P%Yr_F^al0-~;S|">backLeftMotorTemp</variable>
+<variable id="I8UnAV40@Ws@Rv[c/zwO">startMotor</variable>
 <variable id="-@28G=%]pq_W.U4*t{-l">strafeRightState</variable>
 <variable id="^Td+R6vN(vRY}[c9}KGl">shootingPower</variable>
 <variable id="3DV0p(iiWzK)qB_){p?l">shooterRPM</variable>
 <variable id="Ar?EaWx|({t_6S=V$N.h">nextDistance</variable>
-<variable id="I8UnAV40@Ws@Rv[c/zwO">startMotor</variable>
 <variable id="W+|ccqmC6jdcgD.id#0?">pprtoinches</variable>
 <variable id="9rJ`/]R5wCmX2h,I*tS*">backRightMotorTemp</variable>
 <variable id="pk.;B})?P4`H8w=ATY/a">backwardState</variable>
