@@ -1703,6 +1703,26 @@
 </block>
 </statement>
 </block>
+<block type="procedures_defnoreturn" id="f40/$_FUqNB#r/0U;bTQ" x="896" y="69">
+<field name="NAME">Turn Intake Wheels</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="@6;aBp%GC_2y2cq@$]Mb">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="5{Bo,=+X^EL8k$R6vT1h">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="comment" id="vJ9b%xtr/t4aNy*~_?7|">
+<field name="COMMENT">Run Motor </field>
+</block>
+</statement>
+</block>
+</statement>
+</block>
 <block type="procedures_defnoreturn" id="c=38,|F*nr$ov^MUFEwq" x="173" y="107">
 <field name="NAME">getRotation</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
@@ -1914,6 +1934,52 @@
 </next>
 </block>
 </statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="g$r^gz695bUaj-D~P:+1" x="891" y="349">
+<field name="NAME">Turn Storage</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="m3XRg)dc)Zos?e-mU4|Q">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="mRrlg`B=mZG-!?;h?zh,">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftBumperWasPressed</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="comment" id="tSi*j-Az|-6o}^Hg=|:-">
+<field name="COMMENT">Run Motor </field>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="m.0f?6`Yon-Oj8nLW-Fp">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="@sDjhmi//SQJa/ruwF.T">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftBumperWasReleased</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="comment" id="Vc:EBE-i%3;/z-jUa-7b">
+<field name="COMMENT">Run Motor </field>
+</block>
+</statement>
+<next>
+<block type="comment" id="aeL;vcpe4Ba=sY}:GsWe">
+<field name="COMMENT">If left bumber was held, go to intake position, else go to shooting position</field>
+<next>
+<block type="comment" id="BsIA(`U)D%+V+DYs8/2n">
+<field name="COMMENT">Run using encoder then move to certain position</field>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
