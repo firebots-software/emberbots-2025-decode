@@ -12,6 +12,7 @@
 <variable id="44W`I6+P*5dIfue10TP#">yaw</variable>
 <variable id="f4nJi.WihA1SlXS*B-q5">distance</variable>
 <variable id="0]K(1HI(/b.sSW{pM85P">frontRightMotorTemp</variable>
+<variable id="S)=8L)hAZuIk.Y}(gHp_">intakePower</variable>
 <variable id="C*}QUV0TmAPR9MUTj0@x">pitch</variable>
 <variable id="$irOUv%=Bfh6:,[]G|]{">servoState</variable>
 <variable id="APwjCMo=O_1P|~8jj]He">odometryDistance</variable>
@@ -29,8 +30,8 @@
 <variable id="cI[6)B:S2{uDb^~/NwMK">aprilWidth</variable>
 <variable id="Voig?LV+s|92HX{qnv@,">k</variable>
 <variable id="~+uM];ahAK=){bBH#)_W">myHuskyLensBlocks</variable>
-<variable id="osvms_5/uYj)uRYAL~co">aprilX</variable>
 <variable id="w33gkQB:syUcxn:PQ}q+">j</variable>
+<variable id="osvms_5/uYj)uRYAL~co">aprilX</variable>
 <variable id="85E%_Mf6O{YtN/NtzhpH">aprilY</variable>
 <variable id="|^kcT5o_5IGmPBxTF^xP">myIMUparameters</variable>
 </variables>
@@ -64,11 +65,6 @@
 <next>
 <block type="variables_set" id="Mz6W:rLx[,#O^uVZPn8x">
 <field name="VAR" id="EM)SCWB5tZN`Uc5!0NzB">turn</field>
-<value name="VALUE">
-<block type="math_number" id="h^7YDfC-D%bwcsi7i7)q">
-<field name="NUM">0</field>
-</block>
-</value>
 <next>
 <block type="variables_set" id="cy|6d#1ckSKl38Dt@`ha">
 <field name="VAR" id="mg[L%6y)!_ZjJ]$$LLo]">shootingFlap</field>
@@ -109,6 +105,16 @@
 <field name="NUM">1200</field>
 </block>
 </value>
+<next>
+<block type="variables_set" id=")1oxO3%I}^UwgqQo}zYr">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+<value name="VALUE">
+<block type="math_number" id="`Q98uf34Qd?Qy4k~A34,">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -681,6 +687,9 @@
 <block type="procedures_callnoreturn" id="A~}v-w|nV*4y(:1`=b9`">
 <mutation name="shoot"/>
 <next>
+<block type="procedures_callnoreturn" id="D_e2o{e?3!0#[GBos,7_">
+<mutation name="Turn Intake Wheels"/>
+<next>
 <block type="variables_set" id="OEIXYn|p@1foPL?VO(kX" disabled="true">
 <field name="VAR" id="f4nJi.WihA1SlXS*B-q5">distance</field>
 <value name="VALUE">
@@ -931,6 +940,8 @@
 </block>
 </next>
 </block>
+</next>
+</block>
 </statement>
 </block>
 </next>
@@ -1105,10 +1116,20 @@
 </shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_Direction" id="j@|$QsK7UwaTw?=$h.0=">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
+<block type="crServo_setProperty_Direction" id="0H/^PMcP?$9NgH=omEN_">
+<field name="IDENTIFIER">frontLeftMotorAsCRServo</field>
 <field name="PROP">Direction</field>
 <data>{"IDENTIFIER":"frontLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="crServo_typedEnum_direction" id="UzKVq-5`:A6:YGim[_tE">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="j@|$QsK7UwaTw?=$h.0=" disabled="true">
+<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"frontLeftMotor","block_warning_hidden":true,"block_warning_text":"There is no DcMotor named \"frontLeftMotor\" in the current robot configuration.\nPlease activate the configuration that contains the DcMotor named \"frontLeftMotor\",\nor select a device that is in the current robot configuration."}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_direction" id="yQX54]rRes3+ZEgh7E5^">
 <field name="DIRECTION">REVERSE</field>
@@ -1178,10 +1199,10 @@
 </shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_ZeroPowerBehavior" id="GW9C7e-uFIbQ(~3UXO7T">
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="GW9C7e-uFIbQ(~3UXO7T" disabled="true">
 <field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
 <field name="PROP">ZeroPowerBehavior</field>
-<data>{"IDENTIFIER":"frontLeftMotor"}</data>
+<data>{"IDENTIFIER":"frontLeftMotor","block_warning_hidden":true,"block_warning_text":"There is no DcMotor named \"frontLeftMotor\" in the current robot configuration.\nPlease activate the configuration that contains the DcMotor named \"frontLeftMotor\",\nor select a device that is in the current robot configuration."}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="lp1}Q82GV)h+g?$!%)U4">
 <field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
@@ -1264,7 +1285,12 @@
 </block>
 </next>
 </block>
+</next>
+</block>
 </statement>
+</block>
+<block type="math_number" id="h^7YDfC-D%bwcsi7i7)q" x="-162" y="-367">
+<field name="NUM">0</field>
 </block>
 <block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="-1876" y="32">
 <mutation>
@@ -1646,10 +1672,23 @@
 </block>
 </value>
 <next>
-<block type="dcMotor_setProperty_Number" id="sdf1)zMC6Nx6w|2Urnuo">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
+<block type="crServo_setProperty_Number" id="`Q+D5^vpF)soVp=~4GBM">
+<field name="IDENTIFIER">frontLeftMotorAsCRServo</field>
 <field name="PROP">Power</field>
 <data>{"IDENTIFIER":"frontLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="}07AJdPKRP|faC;tUj%Z">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="+Iy!lziX,*Tra@*4)|Re">
+<field name="VAR" id="d%HDHN0gU6{$4g%},uYo">frontLeftMotorTemp</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="sdf1)zMC6Nx6w|2Urnuo" disabled="true">
+<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeftMotor","block_warning_hidden":true,"block_warning_text":"There is no DcMotor named \"frontLeftMotor\" in the current robot configuration.\nPlease activate the configuration that contains the DcMotor named \"frontLeftMotor\",\nor select a device that is in the current robot configuration."}</data>
 <value name="VALUE">
 <shadow type="math_number" id="W36;`HQ-{FGKS(NQcBCg">
 <field name="NUM">0.3</field>
@@ -1701,6 +1740,8 @@
 </block>
 </next>
 </block>
+</next>
+</block>
 </statement>
 </block>
 <block type="procedures_defnoreturn" id="f40/$_FUqNB#r/0U;bTQ" x="896" y="69">
@@ -1708,18 +1749,49 @@
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
 <block type="controls_if" id="@6;aBp%GC_2y2cq@$]Mb">
+<mutation else="1"/>
 <value name="IF0">
 <block type="gamepad_getProperty_Boolean" id="5{Bo,=+X^EL8k$R6vT1h">
-<field name="IDENTIFIER">gamepad1</field>
+<field name="IDENTIFIER">gamepad2</field>
 <field name="PROP">X</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
+<data>{"IDENTIFIER":"gamepad2"}</data>
 </block>
 </value>
 <statement name="DO0">
-<block type="comment" id="vJ9b%xtr/t4aNy*~_?7|">
-<field name="COMMENT">Run Motor </field>
+<block type="variables_set" id="L98GXEZwtv7E,7-Que4Y">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+<value name="VALUE">
+<block type="math_number" id="^`1JH+aIo,XQtEOL#S^B">
+<field name="NUM">1</field>
+</block>
+</value>
 </block>
 </statement>
+<statement name="ELSE">
+<block type="variables_set" id="{~kMo7?^B*9`j7XH+/0/">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+<value name="VALUE">
+<block type="math_number" id="}ajkTTqCut.CXuyB;3wx">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="crServo_setProperty_Number" id="cut#}BWEESs+}~72HXUB">
+<field name="IDENTIFIER">intakeMotorAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"intakeMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="hOcK_lUJUsbpbSYT?Y.z">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="{]Lw3nGZT}_gX`Cx3A,y">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+</block>
+</value>
+</block>
+</next>
 </block>
 </statement>
 </block>
@@ -1985,7 +2057,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="fZo:T8np,a[x:s*!w)vt" x="-1270" y="492">
+<block type="procedures_defnoreturn" id="fZo:T8np,a[x:s*!w)vt" x="-1309" y="518">
 <field name="NAME">displayTelemetry</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -2094,6 +2166,21 @@
 </block>
 </value>
 <next>
+<block type="telemetry_addNumericData_Number" id="7b;D^D-,};}z0S7@JDUh">
+<value name="KEY">
+<shadow type="text" id="OuTW*Zo$S.nqUkJ-4xA3">
+<field name="TEXT">Intake Power</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="variables_get" id="cfWWYNI47*`5/9f5ONI3">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+</block>
+</value>
+<next>
 <block type="telemetry_addNumericData_Number" id="GN6N9q?3C~}s}F;|X^y5">
 <value name="KEY">
 <shadow type="text" id="_=R}q:bfrNt#ibeLDqn:">
@@ -2139,6 +2226,23 @@
 </block>
 </value>
 <next>
+<block type="telemetry_addNumericData_Number" id="4)E]8hi#SxLA*~fAZ6[~">
+<value name="KEY">
+<shadow type="text" id="gqsc)@X/r]CM({4dIp_/">
+<field name="TEXT">Storage Tilt Position</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="!n*ub7miL*0fS;KE$q:6">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="W.gG]b)3?GkJTK}QeZP%">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+</block>
+</value>
+<next>
 <block type="telemetry_addNumericData_Number" id="{Y!E_uQccS+r?^,h#jiM" disabled="true">
 <value name="KEY">
 <shadow type="text" id="ax{R[43NMCiAl003+Qds">
@@ -2156,6 +2260,10 @@
 <next>
 <block type="procedures_callnoreturn" id="3prA#c/.bv$DM0e0.KKx">
 <mutation name="getRotation"/>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
