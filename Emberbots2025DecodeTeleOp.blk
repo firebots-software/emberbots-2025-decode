@@ -19,6 +19,8 @@
 <variable id="d%HDHN0gU6{$4g%},uYo">frontLeftMotorTemp</variable>
 <variable id="1Wx+!(lD3cg;}fXykI3v">robotOrientation</variable>
 <variable id="P}J{*mrn`?;%jCB2fjM1">roll</variable>
+<variable id="AXT.JH:k%U4%S3^M,q}K">InttakeStorageTiltPosition</variable>
+<variable id="0RzGy8`y!gzI79(;5HeN">ShootingStorageTiltPosition</variable>
 <variable id="W+|ccqmC6jdcgD.id#0?">pprtoinches</variable>
 <variable id="lJ-L8P%Yr_F^al0-~;S|">backLeftMotorTemp</variable>
 <variable id="3u,hop3.^mZngLiO58K#">stateComplete</variable>
@@ -35,7 +37,7 @@
 <variable id="85E%_Mf6O{YtN/NtzhpH">aprilY</variable>
 <variable id="|^kcT5o_5IGmPBxTF^xP">myIMUparameters</variable>
 </variables>
-<block type="procedures_defnoreturn" id="@?EvQiXbdH^scDDM$Frf" x="-340" y="-505">
+<block type="procedures_defnoreturn" id="@?EvQiXbdH^scDDM$Frf" x="-366" y="-587">
 <field name="NAME">initVariables</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -113,6 +115,26 @@
 <field name="NUM">0</field>
 </block>
 </value>
+<next>
+<block type="variables_set" id="-3`_fEmx_uS+2p?QeU}Y">
+<field name="VAR" id="AXT.JH:k%U4%S3^M,q}K">InttakeStorageTiltPosition</field>
+<value name="VALUE">
+<block type="math_number" id="=8D_v;N[#%lkmy?]8W.M">
+<field name="NUM">-340</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="j|^N,0o44A5sq$5#1j7=">
+<field name="VAR" id="0RzGy8`y!gzI79(;5HeN">ShootingStorageTiltPosition</field>
+<value name="VALUE">
+<block type="math_number" id="j5w|?|^1cvJnX`TKT(iq">
+<field name="NUM">-10</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -690,6 +712,9 @@
 <block type="procedures_callnoreturn" id="D_e2o{e?3!0#[GBos,7_">
 <mutation name="Turn Intake Wheels"/>
 <next>
+<block type="procedures_callnoreturn" id="2YE!BZ_$)oB{z08%iEx~">
+<mutation name="Turn Storage"/>
+<next>
 <block type="variables_set" id="OEIXYn|p@1foPL?VO(kX" disabled="true">
 <field name="VAR" id="f4nJi.WihA1SlXS*B-q5">distance</field>
 <value name="VALUE">
@@ -942,6 +967,8 @@
 </block>
 </next>
 </block>
+</next>
+</block>
 </statement>
 </block>
 </next>
@@ -1126,16 +1153,6 @@
 </shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_Direction" id="j@|$QsK7UwaTw?=$h.0=" disabled="true">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"frontLeftMotor","block_warning_hidden":true,"block_warning_text":"There is no DcMotor named \"frontLeftMotor\" in the current robot configuration.\nPlease activate the configuration that contains the DcMotor named \"frontLeftMotor\",\nor select a device that is in the current robot configuration."}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_direction" id="yQX54]rRes3+ZEgh7E5^">
-<field name="DIRECTION">REVERSE</field>
-</shadow>
-</value>
-<next>
 <block type="comment" id="a7YTEh]`WqOoQAH}9$5~">
 <field name="COMMENT">^^ Configure Wheel Direction To Match Front of Robot ^^</field>
 <next>
@@ -1179,6 +1196,16 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_RunMode" id="Vv6w_}^Va)//gpn5_L`n">
+<field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"backLeftMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="GX6!%KV=s_+.FDKmx$*j">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+<next>
 <block type="dcMotor_setProperty_ZeroPowerBehavior" id="yma6FBRRQzw#??WMtdtd">
 <field name="IDENTIFIER">backLeftMotorAsDcMotor</field>
 <field name="PROP">ZeroPowerBehavior</field>
@@ -1199,16 +1226,6 @@
 </shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_ZeroPowerBehavior" id="GW9C7e-uFIbQ(~3UXO7T" disabled="true">
-<field name="IDENTIFIER">frontLeftMotorAsDcMotor</field>
-<field name="PROP">ZeroPowerBehavior</field>
-<data>{"IDENTIFIER":"frontLeftMotor","block_warning_hidden":true,"block_warning_text":"There is no DcMotor named \"frontLeftMotor\" in the current robot configuration.\nPlease activate the configuration that contains the DcMotor named \"frontLeftMotor\",\nor select a device that is in the current robot configuration."}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="lp1}Q82GV)h+g?$!%)U4">
-<field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
-</shadow>
-</value>
-<next>
 <block type="servo_setProperty_Number" id="-n45i09iL_,8,5U3EM6C">
 <field name="IDENTIFIER">shootingFlapAsServo</field>
 <field name="PROP">Position</field>
@@ -1217,6 +1234,19 @@
 <shadow type="math_number" id="E7$`Dfmp9VN~A$z`SEZs">
 <field name="NUM">0</field>
 </shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="H{kBYiww/L%DJ2r3,/03">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">-340</field>
+</shadow>
+<block type="variables_get" id="i::VnLhS+hdXn,6aG_%=">
+<field name="VAR" id="0RzGy8`y!gzI79(;5HeN">ShootingStorageTiltPosition</field>
+</block>
 </value>
 <next>
 <block type="variables_set" id="lE?owaVYqg?7Up[4BQVj">
@@ -1288,9 +1318,6 @@
 </next>
 </block>
 </statement>
-</block>
-<block type="math_number" id="h^7YDfC-D%bwcsi7i7)q" x="-162" y="-367">
-<field name="NUM">0</field>
 </block>
 <block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="-1876" y="32">
 <mutation>
@@ -2015,41 +2042,103 @@
 <field name="NAME">Turn Storage</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
-<block type="controls_if" id="m3XRg)dc)Zos?e-mU4|Q">
+<block type="controls_if" id="L3|VG1*Xy?jSJ#9J)Vi.">
+<mutation elseif="1"/>
 <value name="IF0">
-<block type="gamepad_getProperty_Boolean" id="mRrlg`B=mZG-!?;h?zh,">
-<field name="IDENTIFIER">gamepad1</field>
+<block type="gamepad_getProperty_Boolean" id="!*uj^xuvaPZ,g:bQX,ce">
+<field name="IDENTIFIER">gamepad2</field>
 <field name="PROP">LeftBumperWasPressed</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
+<data>{"IDENTIFIER":"gamepad2"}</data>
 </block>
 </value>
 <statement name="DO0">
-<block type="comment" id="tSi*j-Az|-6o}^Hg=|:-">
-<field name="COMMENT">Run Motor </field>
-</block>
-</statement>
-<next>
-<block type="controls_if" id="m.0f?6`Yon-Oj8nLW-Fp">
-<value name="IF0">
-<block type="gamepad_getProperty_Boolean" id="@sDjhmi//SQJa/ruwF.T">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">LeftBumperWasReleased</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
+<block type="dcMotor_setProperty_Number" id="AVClZH3@+4SIMX,RnaMV">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="HSb:?eoLDKiZ!8]:VQp(">
+<field name="NUM">-340</field>
+</shadow>
+<block type="variables_get" id="CD=Z%BN|DGh!%U2HOIZe">
+<field name="VAR" id="AXT.JH:k%U4%S3^M,q}K">InttakeStorageTiltPosition</field>
 </block>
 </value>
-<statement name="DO0">
-<block type="comment" id="Vc:EBE-i%3;/z-jUa-7b">
-<field name="COMMENT">Run Motor </field>
-</block>
-</statement>
 <next>
-<block type="comment" id="aeL;vcpe4Ba=sY}:GsWe">
-<field name="COMMENT">If left bumber was held, go to intake position, else go to shooting position</field>
-<next>
-<block type="comment" id="BsIA(`U)D%+V+DYs8/2n">
-<field name="COMMENT">Run using encoder then move to certain position</field>
+<block type="dcMotor_setProperty_Number" id="7-%/tti8#3@{6BRQ~-xQ">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="ZIIa2[0dAa$y*$}/~{1T">
+<field name="NUM">0.2</field>
+</shadow>
+</value>
 </block>
 </next>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="%c|8Q^eq0oSF~51X,3H7">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftBumperWasReleased</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="=$lk2dlAK_f7dc6j(?{K">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="2[@_ECfEFy_yzIww9fmU">
+<field name="NUM">-20</field>
+</shadow>
+<block type="variables_get" id="$Mw}B(ZXFD=?xlcw}Z(;">
+<field name="VAR" id="0RzGy8`y!gzI79(;5HeN">ShootingStorageTiltPosition</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="WB!M1U9$]smq@#NWhSrU">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="?Vo(cf)v5DV~M)=}j0LZ">
+<field name="NUM">0.2</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_RunMode" id=".UQWmj*f6a($trn:s|ch">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="Pj=0#q0@/Xzw3~B3Qu3(">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="LU+6W,a?3v!RjSyeh-A{">
+<value name="KEY">
+<shadow type="text" id="PH3i))yS~P9:nSyoyF]2">
+<field name="TEXT">Storage Position</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id=";Vun;|At6MviKh4O9)}S">
+<field name="IDENTIFIER">tiltMotorAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tiltMotor"}</data>
+</block>
+</value>
 </block>
 </next>
 </block>
