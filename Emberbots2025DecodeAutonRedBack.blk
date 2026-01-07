@@ -20,6 +20,7 @@
 <variable id="S)=8L)hAZuIk.Y}(gHp_">intakePower</variable>
 <variable id="QdW~OUlS}sE4[4Fy:j~H">rightState</variable>
 <variable id="bJUB|L9Ad:!GI:huC!aX">manualScaling</variable>
+<variable id=")_iaz4lxe#GAdZ$$A%~K">usingStateCompleteForStorage</variable>
 <variable id="Hf?rXSuN8r_r;,}e:y2t">shootingCounter</variable>
 <variable id="d%HDHN0gU6{$4g%},uYo">frontLeftMotorTemp</variable>
 <variable id="OrV-XRkMd-bVQ[L;k$DV">intakeState</variable>
@@ -55,11 +56,11 @@
 <variable id="7vnjC|WKrq8qX_VdYID#">rightIsComplete</variable>
 <variable id="a;_0?W%S-UA%%9iDOd(#">rightDirection</variable>
 <variable id="Kxu79z:|-0h13%moRDta">nextTime</variable>
-<variable id="#y4ZMiYK]V$7Jk|D^W}4">storageToShoot</variable>
 <variable id="4/czB6W*8y5H91,.!#si">nextSpeed</variable>
+<variable id="#y4ZMiYK]V$7Jk|D^W}4">storageToShoot</variable>
+<variable id="bn98o#oSU*{ao;)u$lG5">leftDirection</variable>
 <variable id="|^kcT5o_5IGmPBxTF^xP">myIMUparameters</variable>
 <variable id="TF{pzgLV^*]?LWS`o5sS">stateDelayTimeDifference</variable>
-<variable id="bn98o#oSU*{ao;)u$lG5">leftDirection</variable>
 <variable id="^Td+R6vN(vRY}[c9}KGl">shootingPower</variable>
 <variable id="mg[L%6y)!_ZjJ]$$LLo]">shootingFlap</variable>
 <variable id="3DV0p(iiWzK)qB_){p?l">shooterRPM</variable>
@@ -877,7 +878,7 @@
 <field name="VAR" id=",L}#u_Ljw_CTrW+V@%*6">shootingElapsedTime1</field>
 <value name="VALUE">
 <block type="math_number" id="#s8v$9xDNU`1z]{$*-T.">
-<field name="NUM">500</field>
+<field name="NUM">300</field>
 </block>
 </value>
 <next>
@@ -885,7 +886,7 @@
 <field name="VAR" id="-K~JAh7A@AsGfdIjXe`1">shootingElapsedTime2</field>
 <value name="VALUE">
 <block type="math_number" id="zc`kKXWPZ-f+K8+MsgIm">
-<field name="NUM">1500</field>
+<field name="NUM">1300</field>
 </block>
 </value>
 <next>
@@ -1002,6 +1003,16 @@
 <field name="BOOL">FALSE</field>
 </block>
 </value>
+<next>
+<block type="variables_set" id="s=7({$5,VL~/m@Wn8j%s">
+<field name="VAR" id=")_iaz4lxe#GAdZ$$A%~K">usingStateCompleteForStorage</field>
+<value name="VALUE">
+<block type="logic_boolean" id="BXX0mMeJA#)doo_~Vdor">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -2570,6 +2581,13 @@
 </block>
 </statement>
 <statement name="ELSE">
+<block type="controls_if" id="@LkHvtRL0iZ5U(BksZ~3">
+<value name="IF0">
+<block type="variables_get" id=";Z$`?MBAHnsix.Mi2!5_">
+<field name="VAR" id=")_iaz4lxe#GAdZ$$A%~K">usingStateCompleteForStorage</field>
+</block>
+</value>
+<statement name="DO0">
 <block type="variables_set" id="coj?b6-j!9vH[dz/EQx}">
 <field name="VAR" id="3u,hop3.^mZngLiO58K#">stateComplete</field>
 <value name="VALUE">
@@ -2577,6 +2595,8 @@
 <field name="BOOL">TRUE</field>
 </block>
 </value>
+</block>
+</statement>
 </block>
 </statement>
 <next>
@@ -2969,7 +2989,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="-2372" y="586">
+<block type="procedures_defnoreturn" id="`ww;nCy3@Smueag7s_7v" x="-2400" y="674">
 <mutation>
 <arg name="forward" varid="/KpLC{CAH_H5NSL,^G9c"/>
 <arg name="strafe" varid="A0{M/u;_D9qt7$OJU{:5"/>
@@ -3927,7 +3947,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="IR4KXS[vA^2lCF!vD)[F">
-<field name="NUM">1050</field>
+<field name="NUM">1090</field>
 </block>
 </value>
 </block>
@@ -4139,57 +4159,12 @@
 <field name="NUM">39</field>
 </block>
 </value>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
 <next>
-<block type="controls_if" id="[NQGOhBc]EJ}*_)2Od9T">
-<value name="IF0">
-<block type="logic_operation" id="SFld1~u{llel$i=$|9.M">
-<field name="OP">AND</field>
-<value name="A">
-<block type="variables_get" id="i,g%4@Tvz)X?D=$1K]x!">
-<field name="VAR" id="3u,hop3.^mZngLiO58K#">stateComplete</field>
-</block>
-</value>
-<value name="B">
-<block type="logic_compare" id="a=%N9o,hymIyA~J4BfUV">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="variables_get" id="*=UC1V%)~0~[6k^{WK(R">
-<field name="VAR" id=",8!EfA$6PKZG5-K_V$E?">stateCounter</field>
-</block>
-</value>
-<value name="B">
-<block type="math_number" id="vvW4q[5gNY-9i{IOKZtS">
-<field name="NUM">8</field>
-</block>
-</value>
-</block>
-</value>
-</block>
-</value>
-<statement name="DO0">
-<block type="procedures_callnoreturn" id="sU(/?j.zQ,=}|b*c@uuz">
-<mutation name="resetStates"/>
-<next>
-<block type="telemetry_addTextData_All" id="KAK._@g:*~]K8^}#gdom">
-<value name="KEY">
-<shadow type="text" id="$6rUM@[%(DwK2+%eWuWs">
-<field name="TEXT">Running State</field>
-</shadow>
-</value>
-<value name="TEXT">
-<shadow type="text">
-<field name="TEXT">text</field>
-</shadow>
-<block type="variables_get" id="dxG}/$HC5.r:o8u:RP[h">
-<field name="VAR" id=",8!EfA$6PKZG5-K_V$E?">stateCounter</field>
+<block type="variables_set" id="#`:jh:U%h)eQ5qjMArt8">
+<field name="VAR" id=")_iaz4lxe#GAdZ$$A%~K">usingStateCompleteForStorage</field>
+<value name="VALUE">
+<block type="logic_boolean" id="+yvn:bS{#(`3k^jjAk-[">
+<field name="BOOL">FALSE</field>
 </block>
 </value>
 <next>
@@ -4200,57 +4175,6 @@
 <field name="BOOL">TRUE</field>
 </block>
 </value>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
-<next>
-<block type="controls_if" id="JhUQN5dmb?BJ3!z{d_N-">
-<value name="IF0">
-<block type="logic_operation" id="m2{RC5p+yroZ=]%u53zi">
-<field name="OP">AND</field>
-<value name="A">
-<block type="variables_get" id="dmw$1HRF2N^`+i.s%G?.">
-<field name="VAR" id="3u,hop3.^mZngLiO58K#">stateComplete</field>
-</block>
-</value>
-<value name="B">
-<block type="logic_compare" id="R9LFtt5TF9`S];:bf:*5">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="variables_get" id="*=j`wMH=yi)CRyc$;bus">
-<field name="VAR" id=",8!EfA$6PKZG5-K_V$E?">stateCounter</field>
-</block>
-</value>
-<value name="B">
-<block type="math_number" id="jHt,;c)98yo%jq1v/!tU">
-<field name="NUM">9</field>
-</block>
-</value>
-</block>
-</value>
-</block>
-</value>
-<statement name="DO0">
-<block type="procedures_callnoreturn" id="Ua?KycBk0yS.}dFebQ7y">
-<mutation name="resetStates"/>
-<next>
-<block type="telemetry_addTextData_All" id="OOE^K00(9a((5Y;I2nnw">
-<value name="KEY">
-<shadow type="text" id="FoxMJ2@e6Kp|IoLFq1%T">
-<field name="TEXT">Running State</field>
-</shadow>
-</value>
-<value name="TEXT">
-<shadow type="text">
-<field name="TEXT">text</field>
-</shadow>
-<block type="variables_get" id="UPsclk3?Rv-g{t#?!TMP">
-<field name="VAR" id=",8!EfA$6PKZG5-K_V$E?">stateCounter</field>
-</block>
-</value>
 <next>
 <block type="variables_set" id="b$-TK#`-C-fuH5TIqCZ^">
 <field name="VAR" id="OrV-XRkMd-bVQ[L;k$DV">intakeState</field>
@@ -4259,14 +4183,12 @@
 <field name="BOOL">FALSE</field>
 </block>
 </value>
-<next>
-<block type="variables_set" id="0I|WV0K-4{q5%d09[Mt0">
-<field name="VAR" id="3u,hop3.^mZngLiO58K#">stateComplete</field>
-<value name="VALUE">
-<block type="logic_boolean" id="9_NP/8|7}4i1I*1,zApz">
-<field name="BOOL">TRUE</field>
 </block>
-</value>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -4295,7 +4217,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="2Z7eS*|3Yo*rqH4wS--1">
-<field name="NUM">10</field>
+<field name="NUM">8</field>
 </block>
 </value>
 </block>
@@ -4341,7 +4263,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="J!;XsMf8^*1+-OK.OyLc">
-<field name="NUM">1050</field>
+<field name="NUM">1090</field>
 </block>
 </value>
 </block>
@@ -4374,7 +4296,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="I82P9kckWduPeF3__Yg[">
-<field name="NUM">11</field>
+<field name="NUM">9</field>
 </block>
 </value>
 </block>
@@ -4443,7 +4365,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="Z7`xU#[-hRr|ApO-@c!0">
-<field name="NUM">12</field>
+<field name="NUM">10</field>
 </block>
 </value>
 </block>
@@ -4512,7 +4434,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="{:%%LQo|Y[`ni=}wbv0_">
-<field name="NUM">13</field>
+<field name="NUM">11</field>
 </block>
 </value>
 </block>
@@ -4571,7 +4493,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="MS]0XxVP0QF(G[c;d:;)">
-<field name="NUM">14</field>
+<field name="NUM">12</field>
 </block>
 </value>
 </block>
@@ -4640,7 +4562,7 @@
 </value>
 <value name="B">
 <block type="math_number" id=",T@23}E3F8H9Z/Fk1{}/">
-<field name="NUM">14</field>
+<field name="NUM">12</field>
 </block>
 </value>
 </block>
@@ -4652,10 +4574,6 @@
 <mutation name="resetStates"/>
 </block>
 </statement>
-</block>
-</next>
-</block>
-</next>
 </block>
 </next>
 </block>

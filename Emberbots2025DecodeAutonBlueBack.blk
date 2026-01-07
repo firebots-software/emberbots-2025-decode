@@ -877,7 +877,7 @@
 <field name="VAR" id=",L}#u_Ljw_CTrW+V@%*6">shootingElapsedTime1</field>
 <value name="VALUE">
 <block type="math_number" id="#s8v$9xDNU`1z]{$*-T.">
-<field name="NUM">500</field>
+<field name="NUM">300</field>
 </block>
 </value>
 <next>
@@ -885,7 +885,7 @@
 <field name="VAR" id="-K~JAh7A@AsGfdIjXe`1">shootingElapsedTime2</field>
 <value name="VALUE">
 <block type="math_number" id="zc`kKXWPZ-f+K8+MsgIm">
-<field name="NUM">1500</field>
+<field name="NUM">1300</field>
 </block>
 </value>
 <next>
@@ -3927,7 +3927,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="IR4KXS[vA^2lCF!vD)[F">
-<field name="NUM">1050</field>
+<field name="NUM">1100</field>
 </block>
 </value>
 </block>
@@ -4341,7 +4341,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="J!;XsMf8^*1+-OK.OyLc">
-<field name="NUM">1050</field>
+<field name="NUM">1100</field>
 </block>
 </value>
 </block>

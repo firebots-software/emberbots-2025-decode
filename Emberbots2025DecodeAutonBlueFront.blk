@@ -878,7 +878,7 @@
 <field name="VAR" id=",L}#u_Ljw_CTrW+V@%*6">shootingElapsedTime1</field>
 <value name="VALUE">
 <block type="math_number" id="#s8v$9xDNU`1z]{$*-T.">
-<field name="NUM">500</field>
+<field name="NUM">300</field>
 </block>
 </value>
 <next>
@@ -886,7 +886,7 @@
 <field name="VAR" id="-K~JAh7A@AsGfdIjXe`1">shootingElapsedTime2</field>
 <value name="VALUE">
 <block type="math_number" id="zc`kKXWPZ-f+K8+MsgIm">
-<field name="NUM">1750</field>
+<field name="NUM">1300</field>
 </block>
 </value>
 <next>
@@ -2651,7 +2651,7 @@
 <data>{"IDENTIFIER":"shooterMotor"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="w4bkGsQv^zaW#/=6hXw`">
-<field name="NUM">1100</field>
+<field name="NUM">1085</field>
 </shadow>
 </value>
 <next>
@@ -3488,7 +3488,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="D/O,4i~pH5w#U-v*.VZB" x="-3118" y="1096">
+<block type="procedures_defnoreturn" id="D/O,4i~pH5w#U-v*.VZB" x="-2877" y="1100">
 <field name="NAME">getNextState</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -3812,7 +3812,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="1a]SW$SCQun6?^8Y{8kA">
-<field name="NUM">1050</field>
+<field name="NUM">925</field>
 </block>
 </value>
 </block>
@@ -4246,7 +4246,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id="zRdX%)pMm)1[*juwe5k5">
-<field name="NUM">1050</field>
+<field name="NUM">925</field>
 </block>
 </value>
 </block>
@@ -4378,7 +4378,7 @@
 <field name="VAR" id="J`vK2AHV[(%8k4I9^Vum">NumOfShots</field>
 <value name="VALUE">
 <block type="math_number" id="c5v=Yq/{ChxMGWOp/_):">
-<field name="NUM">2</field>
+<field name="NUM">3</field>
 </block>
 </value>
 <next>
