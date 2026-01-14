@@ -1807,7 +1807,7 @@
 <field name="VAR" id="Kxu79z:|-0h13%moRDta">nextTime</field>
 <value name="VALUE">
 <block type="math_number" id=",)zaO*%?Ocn`RE2br5!.">
-<field name="NUM">1250</field>
+<field name="NUM">2500</field>
 </block>
 </value>
 </block>
@@ -3995,7 +3995,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="yiOJX[v[o~E4YPsfFJeU">
-<field name="NUM">1500</field>
+<field name="NUM">2000</field>
 </block>
 </value>
 </block>
@@ -4036,7 +4036,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="j5;J5z:wbWl-OH$W?Rw^">
-<field name="NUM">2500</field>
+<field name="NUM">2100</field>
 </block>
 </value>
 </block>
@@ -4755,6 +4755,33 @@
 </block>
 </statement>
 <next>
+<block type="controls_if" id="Erf6shwF+xr[1hz,?g#^">
+<value name="IF0">
+<block type="logic_compare" id="wB6N#jfx@tX(Pe1VY(7}">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="D;[!=A-1@igN5GN@aPgu">
+<field name="VAR" id="TnS+ah((B5,8+ST-jN/G">intakeBackwardState</field>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="ns9+VBebjJBBHvqw6PN3">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="Ghc?,zn_a2pfL(}cY[2$">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+<value name="VALUE">
+<block type="math_number" id="UR#j]yIbZwCQde/0QdBf">
+<field name="NUM">-0.75</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
 <block type="crServo_setProperty_Number" id="9OpEZZ*6VvB8VbG9cr1W">
 <field name="IDENTIFIER">intakeMotorAsCRServo</field>
 <field name="PROP">Power</field>
@@ -4767,6 +4794,8 @@
 <field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
 </block>
 </value>
+</block>
+</next>
 </block>
 </next>
 </block>

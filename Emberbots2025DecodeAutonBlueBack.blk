@@ -4485,7 +4485,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="yiOJX[v[o~E4YPsfFJeU">
-<field name="NUM">1500</field>
+<field name="NUM">2000</field>
 </block>
 </value>
 </block>
@@ -4526,7 +4526,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="j5;J5z:wbWl-OH$W?Rw^">
-<field name="NUM">2500</field>
+<field name="NUM">2100</field>
 </block>
 </value>
 </block>
@@ -4704,6 +4704,33 @@
 </block>
 </statement>
 <next>
+<block type="controls_if" id="R)UFI51:aI?EIN1$Cnzq">
+<value name="IF0">
+<block type="logic_compare" id=".-e4Sa:2SccDuW@95B@!">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="c|}=R:;bsOWapFaS:u*h">
+<field name="VAR" id="TnS+ah((B5,8+ST-jN/G">intakeBackwardState</field>
+</block>
+</value>
+<value name="B">
+<block type="logic_boolean" id="vl8~91#@IeMSfFR.h:AX">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="L~Qe4pyCe#5jT4sk!irP">
+<field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
+<value name="VALUE">
+<block type="math_number" id="B0D~h4jc)(N%~$Aab[_v">
+<field name="NUM">-0.75</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
 <block type="crServo_setProperty_Number" id="9OpEZZ*6VvB8VbG9cr1W">
 <field name="IDENTIFIER">intakeMotorAsCRServo</field>
 <field name="PROP">Power</field>
@@ -4716,6 +4743,8 @@
 <field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
 </block>
 </value>
+</block>
+</next>
 </block>
 </next>
 </block>
