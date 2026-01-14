@@ -57,7 +57,7 @@
 <field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
 <value name="VALUE">
 <block type="math_number" id="#:,X1NStpbJ.x)PNR0G%">
-<field name="NUM">1455</field>
+<field name="NUM">1400</field>
 </block>
 </value>
 </block>
@@ -265,7 +265,7 @@
 </shadow>
 </value>
 </block>
-<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="-3569" y="-552">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="-3631" y="-551">
 <field name="NAME">runOpMode</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <data>{"commentPositionLeft":-20,"commentPositionTop":-169}</data>
@@ -1755,7 +1755,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="9n*{s)O~I)UA/?5#rDEQ" x="718" y="-347">
+<block type="procedures_defnoreturn" id="9n*{s)O~I)UA/?5#rDEQ" x="859" y="-346">
 <field name="NAME">alignRobotToAprilTag</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -1775,7 +1775,7 @@
 </value>
 <next>
 <block type="controls_if" id="-TXjW]O:HIP{nv1rL#d,">
-<mutation elseif="3"/>
+<mutation elseif="5"/>
 <value name="IF0">
 <block type="logic_operation" id="SeI6E*A%1hbjspN:,$[J">
 <field name="OP">AND</field>
@@ -1816,7 +1816,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="IJ*40PJ?Z(6f3ItS=E;E">
-<field name="NUM">8</field>
+<field name="NUM">10</field>
 </block>
 </value>
 </block>
@@ -1841,7 +1841,7 @@
 <field name="OP">MINUS</field>
 <value name="A">
 <shadow type="math_number" id="*i[Jf4?gd{RJYi2wpL,-">
-<field name="NUM">9</field>
+<field name="NUM">11</field>
 </shadow>
 </value>
 <value name="B">
@@ -1892,7 +1892,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="#F:m]_W5%Yh#@s3`x!^h">
-<field name="NUM">10</field>
+<field name="NUM">12</field>
 </block>
 </value>
 </block>
@@ -1925,7 +1925,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="tk)H7Xj`i/GW`%{-)QLl">
-<field name="NUM">9</field>
+<field name="NUM">11</field>
 </shadow>
 </value>
 </block>
@@ -2000,7 +2000,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="lwSJr0Ewb@.W!:qH24(?">
-<field name="NUM">-10</field>
+<field name="NUM">-6</field>
 </block>
 </value>
 </block>
@@ -2025,7 +2025,7 @@
 <field name="OP">MINUS</field>
 <value name="A">
 <shadow type="math_number" id="}c4C,=@p81lnf/NC-MTx">
-<field name="NUM">-9</field>
+<field name="NUM">-5</field>
 </shadow>
 </value>
 <value name="B">
@@ -2047,7 +2047,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="SEY$JB{z|4XGl.kjQ;VO">
-<field name="NUM">0.1</field>
+<field name="NUM">0.15</field>
 </shadow>
 </value>
 </block>
@@ -2076,7 +2076,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="z_DpWMXO=#-m~qF;Ws@6">
-<field name="NUM">-8</field>
+<field name="NUM">-4</field>
 </block>
 </value>
 </block>
@@ -2109,7 +2109,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="`I;SQw@2*mHH;76Yrkzu">
-<field name="NUM">-9</field>
+<field name="NUM">-5</field>
 </shadow>
 </value>
 </block>
@@ -2123,7 +2123,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="~/}@hG(KF=|r.hXghD,k">
-<field name="NUM">0.1</field>
+<field name="NUM">0.15</field>
 </shadow>
 </value>
 </block>
@@ -2512,6 +2512,374 @@
 </statement>
 </block>
 </statement>
+<value name="IF4">
+<block type="logic_operation" id="vu~$nA+2M=uXhRwsRPx}">
+<field name="OP">AND</field>
+<value name="A">
+<block type="gamepad_getProperty_Boolean" id="lo;X]G03[EUY|,]8S/5y">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="logic_compare" id="1gt)~25,?c.z@Y})iPaC">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="@WUQ[ZkIJq)[1iXznw$=">
+<field name="VAR" id="WJ}.(QViLO{)%MQ|VC8/">metadataID</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="RJ1@|[x`W/BI)n3Ro|Qv">
+<field name="NUM">20</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO4">
+<block type="controls_if" id="%`Ic^qryMV.sNO3lVFFN">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="logic_compare" id="LIFO$%O_r4mAoDd}`2s3">
+<field name="OP">LTE</field>
+<value name="A">
+<block type="variables_get" id="FNmK)J!zk5#@fv[FPk09">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="TZGLX:TEp.z29bIA8uQv">
+<field name="NUM">24</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="uAe9w|1^.2O:Jf]u@Q1d">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="Z=t5DH!RJ.luFm|!{fMK">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="iJmLv}m;M:JtbiTh)~Q:">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="v5^OAbh[nU}OfdS(_*#z">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id=";CfT7fq]UA{3nMiT+vjM">
+<field name="NUM">25</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">10</field>
+</shadow>
+<block type="variables_get" id="n8R89%jivg~IEQjbt0r.">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Nk5`_JJ:(,,eoT+H`^~P">
+<field name="NUM">0.01</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Ji(QESDnn30KX!Eiz%2}">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="a3Q~=w=;}s6{ETj_ZuCd">
+<mutation name="turnRight">
+<arg name="speed"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="uMi[[UfJ6aHFOvg/j(y5">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF1">
+<block type="logic_compare" id="!-24DY=TaVp;K_1J^pR2">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="ysdXXIqP065~XlAB$D-.">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="@8y!3E~J-Ez#rr!0ALXW">
+<field name="NUM">26</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO1">
+<block type="variables_set" id="ou3f,q#AOf@g_jy_iR$L">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="+yWgf0xO|IAn$_E)w~2/">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="]X4CU^0AnA4t|!r!_T,W">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="srQH{wJ;hP_IZtNBxA}L">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">10</field>
+</shadow>
+<block type="variables_get" id="l5TX$ChnKgO0kq?[]8RA">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id=".6(qw5.L_UB#uG-s%}b?">
+<field name="NUM">25</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="CSDkC#|J|_;cR*D=TKh8">
+<field name="NUM">0.01</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="-yq{ni/P|NMqp+k7,Rww">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="[]%K=tt]vgm5lD`ePn93">
+<mutation name="turnLeft">
+<arg name="speed"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="f[:Qx6H-bqe0u6tyw*!I">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+<value name="IF5">
+<block type="logic_operation" id="XinN+B@lO($T+L/Fo`}l">
+<field name="OP">AND</field>
+<value name="A">
+<block type="gamepad_getProperty_Boolean" id=";~wWSjwsH*C?}rdC(imD">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="logic_compare" id="]*]UUv_CL)x-[e?7=H0v">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="variables_get" id="x^ZT~$et0|1w0hMaB1AB">
+<field name="VAR" id="WJ}.(QViLO{)%MQ|VC8/">metadataID</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="SzQrgg8-UfL:,R2kkH7Z">
+<field name="NUM">24</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO5">
+<block type="controls_if" id="5Fl3SA19.GUw:qIpp/z/">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="logic_compare" id="1fZ3$~]i%kMvwvme3z``">
+<field name="OP">LTE</field>
+<value name="A">
+<block type="variables_get" id="~GmQ,C{CAxHciJfC:D=l">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id=",T|2HCMTf_U)TjyJKz4P">
+<field name="NUM">-21</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="41h}V!yYFyKj+;@#!E]h">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="l@3FR{uPsx$+EM]2R=*6">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="l%dfR$(UmLX96Je[RpY2">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="(AZ+1E9yQ~Z]N.[KOO(w">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="?Yoh.@kjc*iQWP1bb`l2">
+<field name="NUM">-20</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">-7.5</field>
+</shadow>
+<block type="variables_get" id="_yM{:Bd:T_Yo6_ow3I2a">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="f{t]j05;1,pY8|r,6pF4">
+<field name="NUM">0.01</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="lqk2uOo^}ygU@);?@Th9">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="VhVG4(*SU10/O3W9o|sM">
+<mutation name="turnRight">
+<arg name="speed"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="*1[W[[[y5fxOA?aHSnH9">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF1">
+<block type="logic_compare" id="}cq%;L;z`dID*2g-HUtU">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="variables_get" id="Xs[qF1iGIgpyH@qMmW@Y">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="79z4)P$jWQ}QDO`vIgnJ">
+<field name="NUM">-19</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO1">
+<block type="variables_set" id="#kY{%eP}kBe4eo)9rzSF">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="+0Hb@9fZLvh*L^m^|HaP">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="K!vxR!T}bNqI5WaLn[w{">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="8zQjryn}m/2zBlGe{5C(">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">10</field>
+</shadow>
+<block type="variables_get" id="_Km8kT{.g}:)VxSi#B0P">
+<field name="VAR" id="6z.c(Fy_He`q^#jc5~6/">webcamYaw</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="EyOF+d7F|8=!muc,7^F3">
+<field name="NUM">-20</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="!%zAys;F5[/H@XPUheD2">
+<field name="NUM">0.01</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="YnMvg%=g(J(KrtSH:YXn">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="XvkaY)rW/ocI1pU$y(Dy">
+<mutation name="turnLeft">
+<arg name="speed"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="%x*jZoA?].g06+[~_@9]">
+<field name="VAR" id="@x)?a0[*XG{YLq_yxS24">alignSpeed</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
 </block>
 </next>
 </block>
@@ -2693,7 +3061,7 @@
 <field name="VAR" id="0RzGy8`y!gzI79(;5HeN">shootingStorageTiltPosition</field>
 <value name="VALUE">
 <block type="math_number" id="j5w|?|^1cvJnX`TKT(iq">
-<field name="NUM">-10</field>
+<field name="NUM">0</field>
 </block>
 </value>
 <next>
