@@ -39,88 +39,10 @@
 <variable id="|^kcT5o_5IGmPBxTF^xP">myIMUparameters</variable>
 <variable id="1Wx+!(lD3cg;}fXykI3v">robotOrientation</variable>
 </variables>
-<block type="procedures_defnoreturn" id="pn{vFkoTGuU^;r23e+/J" x="-2201" y="-778">
-<field name="NAME">setShootingVelocity</field>
-<comment pinned="false" h="80" w="160">Describe this function...</comment>
-<statement name="STACK">
-<block type="controls_if" id="alZOAUbN-nHbjE6zpH-j">
-<mutation elseif="3" else="1"/>
-<value name="IF0">
-<block type="gamepad_getProperty_Boolean" id="3cM;mwJ?0p47nF|lMenp">
-<field name="IDENTIFIER">gamepad2</field>
-<field name="PROP">DpadUp</field>
-<data>{"IDENTIFIER":"gamepad2"}</data>
-</block>
-</value>
-<statement name="DO0">
-<block type="variables_set" id="E_4_Z.C8pL*t-5,Oqm#n">
-<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
-<value name="VALUE">
-<block type="math_number" id="#:,X1NStpbJ.x)PNR0G%">
-<field name="NUM">1400</field>
-</block>
-</value>
-</block>
-</statement>
-<value name="IF1">
-<block type="gamepad_getProperty_Boolean" id="-/J5XU=_],Eo-;P0W%SJ">
-<field name="IDENTIFIER">gamepad2</field>
-<field name="PROP">DpadRight</field>
-<data>{"IDENTIFIER":"gamepad2"}</data>
-</block>
-</value>
-<statement name="DO1">
-<block type="variables_set" id="z9@xM.Zw1-]Y,pHPoSXs">
-<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
-<value name="VALUE">
-<block type="math_number" id="B}^M7EVGxaKbr_x-+I68">
-<field name="NUM">1170</field>
-</block>
-</value>
-</block>
-</statement>
-<value name="IF2">
-<block type="gamepad_getProperty_Boolean" id="Zspaa~np?ZcXX++Ja_?~">
-<field name="IDENTIFIER">gamepad2</field>
-<field name="PROP">DpadLeft</field>
-<data>{"IDENTIFIER":"gamepad2"}</data>
-</block>
-</value>
-<statement name="DO2">
-<block type="variables_set" id="tz]cL_H0R^cVdl.d74O)">
-<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
-<value name="VALUE">
-<block type="math_number" id="rY!S%ADf=5i(8f9bAp4j">
-<field name="NUM">1190</field>
-</block>
-</value>
-</block>
-</statement>
-<value name="IF3">
-<block type="gamepad_getProperty_Boolean" id=";rdH.*-)-A}Feyfft9Wz">
-<field name="IDENTIFIER">gamepad2</field>
-<field name="PROP">DpadDown</field>
-<data>{"IDENTIFIER":"gamepad2"}</data>
-</block>
-</value>
-<statement name="DO3">
-<block type="variables_set" id="Y^6q*f!t`([lc=.$[OAE">
-<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
-<value name="VALUE">
-<block type="math_number" id="T(u~P6g*{wv~ML%9tn=e">
-<field name="NUM">1100</field>
-</block>
-</value>
-</block>
-</statement>
-<statement name="ELSE">
-<block type="variables_set" id="|+]+)[~Wfu2aV-NE6AQ_">
-<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
-<value name="VALUE">
-<block type="math_arithmetic" id="Taj%zVDYw{5xG#CIS;~-">
+<block type="math_arithmetic" id="Taj%zVDYw{5xG#CIS;~-" disabled="true" x="-1617" y="-892">
 <field name="OP">ADD</field>
 <value name="A">
-<shadow type="math_number">
+<shadow type="math_number" id="*8d,Z{Dxp!~lV)48d_Kt">
 <field name="NUM">1</field>
 </shadow>
 <block type="math_arithmetic" id="c%|a(,4Fc%/fUD~6XRe_">
@@ -229,6 +151,87 @@
 <field name="NUM">881.84657</field>
 </shadow>
 </value>
+</block>
+<block type="procedures_defnoreturn" id="pn{vFkoTGuU^;r23e+/J" x="-2201" y="-778">
+<field name="NAME">setShootingVelocity</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="alZOAUbN-nHbjE6zpH-j">
+<mutation elseif="3" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="3cM;mwJ?0p47nF|lMenp">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="variables_set" id="E_4_Z.C8pL*t-5,Oqm#n">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="#:,X1NStpbJ.x)PNR0G%">
+<field name="NUM">1400</field>
+</block>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="-/J5XU=_],Eo-;P0W%SJ">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadRight</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="variables_set" id="z9@xM.Zw1-]Y,pHPoSXs">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="B}^M7EVGxaKbr_x-+I68">
+<field name="NUM">1170</field>
+</block>
+</value>
+</block>
+</statement>
+<value name="IF2">
+<block type="gamepad_getProperty_Boolean" id="Zspaa~np?ZcXX++Ja_?~">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadLeft</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO2">
+<block type="variables_set" id="tz]cL_H0R^cVdl.d74O)">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="rY!S%ADf=5i(8f9bAp4j">
+<field name="NUM">1190</field>
+</block>
+</value>
+</block>
+</statement>
+<value name="IF3">
+<block type="gamepad_getProperty_Boolean" id=";rdH.*-)-A}Feyfft9Wz">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO3">
+<block type="variables_set" id="Y^6q*f!t`([lc=.$[OAE">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="T(u~P6g*{wv~ML%9tn=e">
+<field name="NUM">1100</field>
+</block>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="variables_set" id="|+]+)[~Wfu2aV-NE6AQ_">
+<field name="VAR" id="~49m(5/4XmU;:_x!3Vg!">shootingVelocity</field>
+<value name="VALUE">
+<block type="math_number" id="jA84YLs0b.VPhW@l`[0k">
+<field name="NUM">1100</field>
 </block>
 </value>
 </block>
@@ -2000,7 +2003,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="lwSJr0Ewb@.W!:qH24(?">
-<field name="NUM">-6</field>
+<field name="NUM">-7.5</field>
 </block>
 </value>
 </block>
@@ -2025,7 +2028,7 @@
 <field name="OP">MINUS</field>
 <value name="A">
 <shadow type="math_number" id="}c4C,=@p81lnf/NC-MTx">
-<field name="NUM">-5</field>
+<field name="NUM">-6.5</field>
 </shadow>
 </value>
 <value name="B">
@@ -2076,7 +2079,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="z_DpWMXO=#-m~qF;Ws@6">
-<field name="NUM">-4</field>
+<field name="NUM">-5.5</field>
 </block>
 </value>
 </block>
@@ -2109,7 +2112,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="`I;SQw@2*mHH;76Yrkzu">
-<field name="NUM">-5</field>
+<field name="NUM">-6.5</field>
 </shadow>
 </value>
 </block>
@@ -2552,7 +2555,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="TZGLX:TEp.z29bIA8uQv">
-<field name="NUM">24</field>
+<field name="NUM">27.5</field>
 </block>
 </value>
 </block>
@@ -2577,7 +2580,7 @@
 <field name="OP">MINUS</field>
 <value name="A">
 <shadow type="math_number" id=";CfT7fq]UA{3nMiT+vjM">
-<field name="NUM">25</field>
+<field name="NUM">28.5</field>
 </shadow>
 </value>
 <value name="B">
@@ -2628,7 +2631,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="@8y!3E~J-Ez#rr!0ALXW">
-<field name="NUM">26</field>
+<field name="NUM">29.5</field>
 </block>
 </value>
 </block>
@@ -2661,7 +2664,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id=".6(qw5.L_UB#uG-s%}b?">
-<field name="NUM">25</field>
+<field name="NUM">28.5</field>
 </shadow>
 </value>
 </block>
@@ -2736,7 +2739,7 @@
 </value>
 <value name="B">
 <block type="math_number" id=",T|2HCMTf_U)TjyJKz4P">
-<field name="NUM">-21</field>
+<field name="NUM">-25.5</field>
 </block>
 </value>
 </block>
@@ -2761,7 +2764,7 @@
 <field name="OP">MINUS</field>
 <value name="A">
 <shadow type="math_number" id="?Yoh.@kjc*iQWP1bb`l2">
-<field name="NUM">-20</field>
+<field name="NUM">-24.5</field>
 </shadow>
 </value>
 <value name="B">
@@ -2812,7 +2815,7 @@
 </value>
 <value name="B">
 <block type="math_number" id="79z4)P$jWQ}QDO`vIgnJ">
-<field name="NUM">-19</field>
+<field name="NUM">-23.5</field>
 </block>
 </value>
 </block>
@@ -2845,7 +2848,7 @@
 </value>
 <value name="B">
 <shadow type="math_number" id="EyOF+d7F|8=!muc,7^F3">
-<field name="NUM">-20</field>
+<field name="NUM">-24.5</field>
 </shadow>
 </value>
 </block>
@@ -4174,7 +4177,7 @@
 <field name="VAR" id="S)=8L)hAZuIk.Y}(gHp_">intakePower</field>
 <value name="VALUE">
 <block type="math_number" id="fAg}{_QxWHmnnJwELgmC">
-<field name="NUM">0.75</field>
+<field name="NUM">1</field>
 </block>
 </value>
 </block>
