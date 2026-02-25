@@ -4265,9 +4265,4 @@
 </block>
 </statement>
 </block>
-</xml>
-<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<Extra>
-<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="Emberbots2025DecodeTeleOp" />
-<Enabled value="true" />
-</Extra>
+</xml><?xml version='1.0' encoding='UTF-8' standalone='yes' ?><Extra><OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="Emberbots2025DecodeTeleOp" /><Enabled value="false" /></Extra>
